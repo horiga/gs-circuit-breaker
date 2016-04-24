@@ -1,0 +1,8 @@
+@startuml
+
+"user" -> "reading(port:8080)" : 'curl http://localhost:8080/to-read'
+"reading(port:8080)" -> "bookstore(port:8090)" : http://localhost:8090/recommended
+"bookstore(port:8090)" -> "reading(port:8080)" : result
+"reading(port:8080)" -> "user" : result
+
+@enduml
