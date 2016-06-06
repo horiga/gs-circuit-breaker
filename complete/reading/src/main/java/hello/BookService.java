@@ -11,7 +11,7 @@ import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 @Slf4j
 public class BookService {
 
-	@HystrixCommand(fallbackMethod = "reliable")
+	@HystrixCommand(fallbackMethod = "reliable", commandKey = "bookservice")
 	public String readingList() {
 		try {
 			RestTemplate restTemplate = new RestTemplate();

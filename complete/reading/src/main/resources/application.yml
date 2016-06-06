@@ -1,0 +1,16 @@
+server.port: 8080
+
+hystrix:
+  threadpool:
+    default:
+      coreSize: 500
+  command:
+    bookservice:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 10000
+      circuitBreaker:
+        requestVolumeThreshold: 100
+        sleepWindowInMilliseconds: 1000
+        errorThresholdPercentage: 90
